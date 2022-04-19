@@ -26,6 +26,7 @@ public static class FSHResource
     public const string RoleClaims = nameof(RoleClaims);
     public const string Products = nameof(Products);
     public const string Brands = nameof(Brands);
+    public const string Sync_OCAT = nameof(Sync_OCAT);
 }
 
 public static class FSHPermissions
@@ -64,7 +65,14 @@ public static class FSHPermissions
         new("View Tenants", FSHAction.View, FSHResource.Tenants, IsRoot: true),
         new("Create Tenants", FSHAction.Create, FSHResource.Tenants, IsRoot: true),
         new("Update Tenants", FSHAction.Update, FSHResource.Tenants, IsRoot: true),
-        new("Upgrade Tenant Subscription", FSHAction.UpgradeSubscription, FSHResource.Tenants, IsRoot: true)
+        new("Upgrade Tenant Subscription", FSHAction.UpgradeSubscription, FSHResource.Tenants, IsRoot: true),
+        new("View Sync_OCAT", FSHAction.View, FSHResource.Sync_OCAT, IsBasic: true),
+        new("Search Sync_OCAT", FSHAction.Search, FSHResource.Sync_OCAT, IsBasic: true),
+        new("Create Sync_OCAT", FSHAction.Create, FSHResource.Sync_OCAT, IsBasic: true),
+        new("Update Sync_OCAT", FSHAction.Update, FSHResource.Sync_OCAT, IsBasic: true),
+        new("Delete Sync_OCAT", FSHAction.Delete, FSHResource.Sync_OCAT, IsBasic: true),
+        new("Generate Sync_OCAT", FSHAction.Generate, FSHResource.Sync_OCAT, IsBasic: true),
+        new("Clean Sync_OCAT", FSHAction.Clean, FSHResource.Sync_OCAT, IsBasic: true),
     };
 
     public static IReadOnlyList<FSHPermission> All { get; } = new ReadOnlyCollection<FSHPermission>(_all);
